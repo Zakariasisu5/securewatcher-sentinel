@@ -1,11 +1,11 @@
 
 import React from "react";
-import { Bell, ChevronLeft, Menu, Search } from "lucide-react";
+import { ChevronLeft, Menu, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Badge } from "@/components/ui/badge";
+import { NotificationsPopover } from "@/components/notifications/NotificationsPopover";
 
 interface HeaderProps {
   sidebarOpen: boolean;
@@ -39,14 +39,7 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
       </div>
       
       <div className="flex items-center space-x-2">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="relative"
-        >
-          <Bell className="h-5 w-5" />
-          <Badge className="absolute -top-1 -right-1 h-5 min-w-5 flex items-center justify-center bg-destructive text-[10px]">3</Badge>
-        </Button>
+        <NotificationsPopover />
         
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
