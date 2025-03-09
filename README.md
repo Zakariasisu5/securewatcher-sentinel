@@ -1,69 +1,70 @@
-# Welcome to your Lovable project
+### develop by **Zakaria Sisu**
+### LinkedIn:https://www.linkedin.com/in/mr-zakaria-sisu-9b2486239?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
 
-## Project info
+### Sentinel IDS – Power, Precision, and Proactive Defense.
+The future of cybersecurity intelligence starts here.
+### Real-Time Threat Detection
 
-**URL**: https://lovable.dev/projects/c8910c66-eccf-4ed6-aaa9-b385e1eace2e
+### Continuously monitors network traffic,
+### identifying malicious activity in milliseconds.
 
-## How can I edit this code?
+Hybrid Detection Engine leveraging both signature-based and AI-driven anomaly detection for 99.9% accuracy.
 
-There are several ways of editing your application.
+Threat intelligence feeds automatically update to recognize the latest attack patterns.
 
-**Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c8910c66-eccf-4ed6-aaa9-b385e1eace2e) and start prompting.
+2. Smart Anomaly Detection with Machine Learning
 
-Changes made via Lovable will be committed automatically to this repo.
+Adapts to evolving cyber threats with unsupervised ML models that detect abnormal network behaviors.
 
-**Use your preferred IDE**
+Reduces false positives by learning from real-world network activity patterns.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Customizable threat scoring system to prioritize critical attacks.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Follow these steps:
+3. Instant Alerting & Automated Incident Response
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Multi-channel notifications: Email, SMS, push alerts, and SIEM integrations.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Automated IP blocking and firewall rule enforcement to neutralize threats in real-time.
 
-# Step 3: Install the necessary dependencies.
-npm i
+Incident playbooks with step-by-step guidance on containment and mitigation.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
 
-**Edit a file directly in GitHub**
+4. Deep Packet Inspection & Network Traffic Analysis
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Live packet capture and forensic investigation tools to analyze cyberattacks.
 
-**Use GitHub Codespaces**
+Visual insights into top attack sources, target systems, and affected protocols.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Full protocol analysis (HTTP, DNS, TCP, UDP, SSH, etc.) to expose hidden threats.
 
-## What technologies are used for this project?
 
-This project is built with .
+5. Centralized Security Dashboard & Reports
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Intuitive dashboard for monitoring cyber threats across multiple endpoints.
 
-## How can I deploy this project?
+Advanced filtering & drill-down analytics to pinpoint vulnerabilities.
 
-Simply open [Lovable](https://lovable.dev/projects/c8910c66-eccf-4ed6-aaa9-b385e1eace2e) and click on Share -> Publish.
+Automated reports for compliance audits (GDPR, NIST, ISO 27001).
 
-## I want to use a custom domain - is that possible?
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+6. Enterprise-Grade Security & Customization
+
+Role-Based Access Control (RBAC) to manage security team permissions.
+
+Supports on-premise, cloud, and hybrid deployments (AWS, Azure, GCP).
+
+Fully customizable detection rules and response automation workflows.
+
+
+
+---
+
+Why Choose Sentinel IDS?
+
+✅ Lightning-fast detection – Threats are identified in milliseconds.
+✅ Adaptive AI-powered defense – Learns and evolves with emerging cyber risks.
+✅ Minimal false positives – Precision-tuned detection algorithms ensure accuracy.
+✅ Seamless integration – Works with firewalls, SIEMs, and SOC workflows.
+✅ Enterprise-ready security – Complies with industry standards and regulations.
