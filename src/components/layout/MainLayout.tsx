@@ -12,17 +12,10 @@ export function MainLayout({ children }: MainLayoutProps) {
   const isMobile = useIsMobile();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // Close sidebar on mobile when route changes
-  useEffect(() => {
-    if (isMobile) {
-      setSidebarOpen(false);
-    }
-  }, [isMobile]);
-
   // Set initial sidebar state based on screen size
   useEffect(() => {
     setSidebarOpen(!isMobile);
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="flex min-h-screen bg-background w-full">
