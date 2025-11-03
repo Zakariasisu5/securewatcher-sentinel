@@ -10,30 +10,39 @@ interface MainLayoutProps {
 
 export function MainLayout({ children }: MainLayoutProps) {
   const isMobile = useIsMobile();
-  const [sidebarOpen, setSidebarOpen] = useState<boolean>(() => !isMobile);
 
-  // keep sidebar state in sync with screen size
+  // Start with undefined so we can reliably sync once we know isMobile
+  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
+  const [mounted, setMounted] = useState(false);
+
+  // ensure we only set initial state after mount (avoids SSR mismatch)
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // sync sidebar with isMobile once mounted
+  useEffect(() => {
+    if (!mounted) return;
     setSidebarOpen(!isMobile);
-  }, [isMobile]);
+  }, [isMobile, mounted]);
+
+  // computed container margin class (always a string)
+  const containerMarginClass = !isMobile ? (sidebarOpen ? "ml-64" : "ml-20") : "";
 
   return (
     <div className="flex min-h-screen bg-background w-full">
-      {/* Sidebar (higher z-index than backdrop so it sits above on mobile) */}
+      {/* Sidebar should appear above the backdrop on mobile.
+          Ensure Sidebar has a z-index >= 50 (e.g. z-50). */}
       <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
 
-      {/* Backdrop for mobile (only rendered when sidebar is open) */}
+      {/* Backdrop (mobile only) */}
       {isMobile && sidebarOpen && (
         <div
-          aria-hidden={!sidebarOpen}
-          role="button"
-          tabIndex={0}
           className="fixed inset-0 bg-black/50 z-40"
+          role="presentation"
           onClick={() => setSidebarOpen(false)}
           onKeyDown={(e) => {
-            if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
-              setSidebarOpen(false);
-            }
+            if (e.key === "Escape") setSidebarOpen(false);
           }}
         />
       )}
@@ -41,7 +50,7 @@ export function MainLayout({ children }: MainLayoutProps) {
       <div
         className={cn(
           "flex flex-col flex-1 w-full transition-all duration-300 ease-in-out",
-          !isMobile ? (sidebarOpen ? "ml-64" : "ml-20") : ""
+          containerMarginClass
         )}
       >
         <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
