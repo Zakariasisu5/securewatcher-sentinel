@@ -70,3 +70,52 @@ Fully customizable detection rules and response automation workflows.
 ✅ Minimal false positives – Precision-tuned detection algorithms ensure accuracy.
 ✅ Seamless integration – Works with firewalls, SIEMs, and SOC workflows.
 ✅ Enterprise-ready security – Complies with industry standards and regulations.
+
+
+🧭 How to Clone & Use Sentinel IDS
+
+Follow these steps to set up the project locally:
+
+1. Clone the Repository
+
+git clone https://github.com/Zakariasisu5/SecureWatcher-Sentinel.git
+
+2. Navigate into the Project Directory
+
+cd SecureWatcher-Sentinel
+
+3. Install Dependencies
+
+If it’s a Node.js project:
+
+npm install
+
+or
+
+yarn install
+
+4. Configure Environment Variables
+
+Create a .env file in the project root and add your configuration details:
+
+# Example environment variables
+DATABASE_URL=your_database_url
+API_KEY=your_api_key
+FIREBASE_CONFIG=your_firebase_config
+
+5. Run the Development Server
+
+npm run dev
+
+Then open your browser and visit:
+
+http://localhost:3000
+
+6. Build for Production (Optional)
+
+npm run build
+npm start
+
+7. Deployment
+
+Deploy easily on Vercel, Netlify, or your preferred cloud provider.
