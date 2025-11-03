@@ -1,14 +1,10 @@
-
 import React from "react";
-import { ChevronLeft, Menu, Search, LogOut } from "lucide-react";
+import { ChevronLeft, Menu, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { NotificationsPopover } from "@/components/notifications/NotificationsPopover";
-import { useAuth } from "@/providers/AuthProvider";
-import { useToast } from "@/hooks/use-toast";
-import { useNavigate } from "react-router-dom";
 
 interface HeaderProps {
   sidebarOpen: boolean;
@@ -17,24 +13,6 @@ interface HeaderProps {
 
 export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
   const isMobile = useIsMobile();
-  const { user, signOut } = useAuth();
-  const { toast } = useToast();
-  const navigate = useNavigate();
-  
-  const handleSignOut = async () => {
-    try {
-      await signOut();
-      toast({
-        title: "Signed out successfully",
-      });
-      navigate("/auth");
-    } catch (error) {
-      toast({
-        title: "Error signing out",
-        variant: "destructive",
-      });
-    }
-  };
   
   return (
     <header className="sticky top-0 z-30 flex items-center justify-between h-16 px-4 md:px-6 border-b border-border/50 bg-background/80 backdrop-blur-md">
@@ -75,10 +53,6 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
           <DropdownMenuContent align="end">
             <DropdownMenuItem>Profile</DropdownMenuItem>
             <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuItem onClick={handleSignOut}>
-              <LogOut className="mr-2 h-4 w-4" />
-              Log out
-            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

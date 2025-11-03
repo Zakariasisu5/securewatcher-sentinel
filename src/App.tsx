@@ -1,8 +1,5 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
-import { AuthProvider } from "@/providers/AuthProvider";
-import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 
 import Index from "@/pages/Index";
 import Threats from "@/pages/Threats";
@@ -13,36 +10,27 @@ import Reports from "@/pages/Reports";
 import Alerts from "@/pages/Alerts";
 import Settings from "@/pages/Settings";
 import Help from "@/pages/Help";
-import Auth from "@/pages/Auth";
 import NotFound from "@/pages/NotFound";
 
 import "./App.css";
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/auth" element={<Auth />} />
-          
-          {/* Protected Routes */}
-          <Route path="/" element={<ProtectedRoute><Index /></ProtectedRoute>} />
-          <Route path="/threats" element={<ProtectedRoute><Threats /></ProtectedRoute>} />
-          <Route path="/threats/:id" element={<ProtectedRoute><ThreatDetails /></ProtectedRoute>} />
-          <Route path="/traffic" element={<ProtectedRoute><Traffic /></ProtectedRoute>} />
-          <Route path="/anomalies" element={<ProtectedRoute><Anomalies /></ProtectedRoute>} />
-          <Route path="/reports" element={<ProtectedRoute><Reports /></ProtectedRoute>} />
-          <Route path="/alerts" element={<ProtectedRoute><Alerts /></ProtectedRoute>} />
-          <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
-          <Route path="/help" element={<ProtectedRoute><Help /></ProtectedRoute>} />
-          
-          {/* Not Found */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/threats" element={<Threats />} />
+        <Route path="/threats/:id" element={<ThreatDetails />} />
+        <Route path="/traffic" element={<Traffic />} />
+        <Route path="/anomalies" element={<Anomalies />} />
+        <Route path="/reports" element={<Reports />} />
+        <Route path="/alerts" element={<Alerts />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/help" element={<Help />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <Toaster />
-    </AuthProvider>
+    </Router>
   );
 }
 
