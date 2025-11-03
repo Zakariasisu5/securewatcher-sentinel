@@ -16,17 +16,15 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
   
   return (
     <header className="sticky top-0 z-30 flex items-center justify-between h-16 px-4 md:px-6 border-b border-border/50 bg-background/80 backdrop-blur-md">
-      <div className="flex items-center">
-        {isMobile && (
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="mr-2"
-          >
-            {sidebarOpen ? <ChevronLeft className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
-        )}
+      <div className="flex items-center flex-1">
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+          className="mr-2 md:hidden"
+        >
+          <Menu className="h-5 w-5" />
+        </Button>
         <div className="relative w-full max-w-md hidden md:block">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input

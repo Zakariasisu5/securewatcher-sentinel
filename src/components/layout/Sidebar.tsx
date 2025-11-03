@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -12,10 +11,12 @@ import {
   AlertCircle,
   Bell,
   FileText,
-  HelpCircle
+  HelpCircle,
+  X
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface SidebarProps {
   open: boolean;
@@ -57,6 +58,7 @@ const SidebarItem = ({ icon: Icon, label, to, active, expanded }: SidebarItemPro
 
 export function Sidebar({ open, setOpen }: SidebarProps) {
   const location = useLocation();
+  const isMobile = useIsMobile();
   
   const isActive = (path: string) => {
     return location.pathname === path;
@@ -66,7 +68,10 @@ export function Sidebar({ open, setOpen }: SidebarProps) {
     <div 
       className={cn(
         "fixed inset-y-0 left-0 z-50 flex flex-col bg-sidebar transition-all duration-300 ease-in-out border-r border-border/50",
-        open ? "w-64" : "w-20"
+        // Mobile: slide in/out, Desktop: expand/collapse
+        isMobile 
+          ? open ? "translate-x-0 w-64" : "-translate-x-full w-64"
+          : open ? "w-64" : "w-20"
       )}
     >
       <div className="flex items-center justify-between h-16 px-4 border-b border-border/50">
@@ -83,7 +88,7 @@ export function Sidebar({ open, setOpen }: SidebarProps) {
           onClick={() => setOpen(!open)}
           className="text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
         >
-          {open ? <ChevronLeft className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {isMobile ? <X className="h-5 w-5" /> : open ? <ChevronLeft className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </Button>
       </div>
       
