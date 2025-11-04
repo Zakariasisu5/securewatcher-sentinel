@@ -14,7 +14,129 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      attack_summary: {
+        Row: {
+          avg_response_time: number
+          blocked_attacks: number
+          critical_threats: number
+          date: string
+          id: string
+          total_attacks: number
+          updated_at: string
+        }
+        Insert: {
+          avg_response_time?: number
+          blocked_attacks?: number
+          critical_threats?: number
+          date?: string
+          id?: string
+          total_attacks?: number
+          updated_at?: string
+        }
+        Update: {
+          avg_response_time?: number
+          blocked_attacks?: number
+          critical_threats?: number
+          date?: string
+          id?: string
+          total_attacks?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      system_components: {
+        Row: {
+          details: string | null
+          id: string
+          last_checked: string
+          name: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          details?: string | null
+          id?: string
+          last_checked?: string
+          name: string
+          status: string
+          updated_at?: string
+        }
+        Update: {
+          details?: string | null
+          id?: string
+          last_checked?: string
+          name?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      threats: {
+        Row: {
+          created_at: string
+          id: string
+          severity: string
+          source: string
+          status: string
+          timestamp: string
+          type: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          severity: string
+          source: string
+          status?: string
+          timestamp?: string
+          type: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          severity?: string
+          source?: string
+          status?: string
+          timestamp?: string
+          type?: string
+        }
+        Relationships: []
+      }
+      traffic_logs: {
+        Row: {
+          created_at: string
+          data_size: string
+          destination_ip: string
+          id: string
+          port: number
+          protocol: string
+          source_ip: string
+          status: string
+          timestamp: string
+        }
+        Insert: {
+          created_at?: string
+          data_size: string
+          destination_ip: string
+          id?: string
+          port: number
+          protocol: string
+          source_ip: string
+          status: string
+          timestamp?: string
+        }
+        Update: {
+          created_at?: string
+          data_size?: string
+          destination_ip?: string
+          id?: string
+          port?: number
+          protocol?: string
+          source_ip?: string
+          status?: string
+          timestamp?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
