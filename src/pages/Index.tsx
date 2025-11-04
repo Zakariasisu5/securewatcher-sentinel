@@ -4,6 +4,7 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { ThreatMonitor } from "@/components/dashboard/ThreatMonitor";
 import { SystemStatus } from "@/components/dashboard/SystemStatus";
 import { AttackSummary } from "@/components/dashboard/AttackSummary";
+import { SecurityAssistant } from "@/components/ai/SecurityAssistant";
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
           <AttackSummary />
         </div>
       </div>
+      <SecurityAssistant />
     </MainLayout>
   );
 };
